@@ -1,0 +1,609 @@
+  [1m[35m (923.3ms)[0m  [1m[35mCREATE DATABASE "More_Cheese_Please_development" ENCODING = 'unicode'[0m
+  [1m[35m (304.7ms)[0m  [1m[35mCREATE DATABASE "More_Cheese_Please_test" ENCODING = 'unicode'[0m
+  [1m[35m (55.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2820655379772048735)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCheeses (20191213161810)
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCREATE TABLE "cheeses" ("id" bigserial primary key, "name" character varying, "texture" character varying, "flavor" character varying, "milk" character varying, "image" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (5.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213161810"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePlates (20191213164251)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "plates" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213164251"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDrinks (20191213164640)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "drinks" ("id" bigserial primary key, "name" character varying, "variety" character varying, "image" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213164640"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCheesePlates (20191213165556)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "cheese_plates" ("id" bigserial primary key, "cheese_id" integer, "plate_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213165556"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-13 17:00:33.332631"], ["updated_at", "2019-12-13 17:00:33.332631"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2820655379772048735)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mPlate Load (2.3ms)[0m  [1m[34mSELECT "plates".* FROM "plates"[0m
+  [1m[36mCheese Load (1.9ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlate Create (1.2ms)[0m  [1m[32mINSERT INTO "plates" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "First plate"], ["created_at", "2019-12-13 17:03:42.238339"], ["updated_at", "2019-12-13 17:03:42.238339"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlate Create (0.5ms)[0m  [1m[32mINSERT INTO "plates" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Second plate"], ["created_at", "2019-12-13 17:03:42.246240"], ["updated_at", "2019-12-13 17:03:42.246240"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (1.0ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Cheddar"], ["texture", "hard"], ["flavor", "medium"], ["milk", "cow"], ["image", "https://www.cheese.com/media/img/cheese/Cheddar.jpg"], ["created_at", "2019-12-13 17:03:42.262907"], ["updated_at", "2019-12-13 17:03:42.262907"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.8ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Brie"], ["texture", "soft"], ["flavor", "mild"], ["milk", "cow"], ["image", "https://cdn.shopify.com/s/files/1/2836/2982/products/brie-recipe_grande.jpg?v=1533088694"], ["created_at", "2019-12-13 17:03:42.270119"], ["updated_at", "2019-12-13 17:03:42.270119"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.5ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Raclette"], ["texture", "semi-soft"], ["flavor", "medium"], ["milk", "cow"], ["image", "https://i.pinimg.com/600x315/f3/a6/cb/f3a6cb138e3fcb28ea109c8c6d1b7916.jpg"], ["created_at", "2019-12-13 17:03:42.278843"], ["updated_at", "2019-12-13 17:03:42.278843"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.5ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Chevre"], ["texture", "soft"], ["flavor", "mild"], ["milk", "goat"], ["image", "https://www.cheese.com/media/img/cheese/Goats_cheese.jpg"], ["created_at", "2019-12-13 17:03:42.286007"], ["updated_at", "2019-12-13 17:03:42.286007"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.5ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Camembert"], ["texture", "soft"], ["flavor", "medium"], ["milk", "cow"], ["image", "https://www.cheese.com/media/img/cheese/Camembert.jpg"], ["created_at", "2019-12-13 17:03:42.292712"], ["updated_at", "2019-12-13 17:03:42.292712"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.5ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Saint Agur"], ["texture", "soft"], ["flavor", "bleu"], ["milk", "cow"], ["image", "https://www.cheese.com/media/img/cheese/SaintAgurCheese.jpg"], ["created_at", "2019-12-13 17:03:42.298997"], ["updated_at", "2019-12-13 17:03:42.298997"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.5ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Neufchatel"], ["texture", "semi-soft"], ["flavor", "mild"], ["milk", "cow"], ["image", "https://www.cheese.com/media/img/cheese/Neufchatel.jpg"], ["created_at", "2019-12-13 17:03:42.304961"], ["updated_at", "2019-12-13 17:03:42.304961"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCheese Create (0.4ms)[0m  [1m[32mINSERT INTO "cheeses" ("name", "texture", "flavor", "milk", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Munster"], ["texture", "soft"], ["flavor", "bold"], ["milk", "cow"], ["image", "https://www.cheese.com/media/img/cheese/Munster.jpg"], ["created_at", "2019-12-13 17:03:42.310551"], ["updated_at", "2019-12-13 17:03:42.310551"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-12-13 12:05:21 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adambrown/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adambrown/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 18.7ms | Allocations: 481)
+Completed 200 OK in 46ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 2642)
+
+
+Started GET "/cheeses" for ::1 at 2019-12-13 12:05:27 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CheesesController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/cheeses" for ::1 at 2019-12-13 12:06:15 -0500
+Processing by CheesesController#index as HTML
+  [1m[36mCheese Load (3.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/controllers/cheeses_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.49ms)
+Completed 200 OK in 97ms (Views: 73.1ms | ActiveRecord: 13.6ms | Allocations: 12131)
+
+
+Started GET "/plates" for ::1 at 2019-12-13 13:58:24 -0500
+Processing by PlatesController#index as HTML
+  [1m[36mPlate Load (6.9ms)[0m  [1m[34mSELECT "plates".* FROM "plates"[0m
+  ↳ app/controllers/plates_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.21ms)
+Completed 200 OK in 72ms (Views: 30.1ms | ActiveRecord: 30.6ms | Allocations: 4829)
+
+
+Started GET "/drinks" for ::1 at 2019-12-13 13:58:45 -0500
+Processing by DrinksController#index as HTML
+  [1m[36mDrink Load (3.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.01ms)
+Completed 200 OK in 29ms (Views: 12.8ms | ActiveRecord: 7.1ms | Allocations: 1516)
+
+
+Started GET "/cheese_plates" for ::1 at 2019-12-13 13:58:53 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CheesePlatesController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:00:57 -0500
+Processing by CheesePlatesController#index as HTML
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 1612)
+
+
+  
+NoMethodError (undefined method `arity' for :cheese:Symbol):
+  
+app/models/cheese_plate.rb:2:in `<class:CheesePlate>'
+app/models/cheese_plate.rb:1:in `<main>'
+app/controllers/cheese_plates_controller.rb:4:in `index'
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:13:20 -0500
+Processing by CheesePlatesController#index as HTML
+  [1m[36mCheesePlate Load (14.5ms)[0m  [1m[34mSELECT "cheese_plates".* FROM "cheese_plates"[0m
+  ↳ app/controllers/cheese_plates_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.26ms)
+Completed 200 OK in 49ms (Views: 17.7ms | ActiveRecord: 22.1ms | Allocations: 4028)
+
+
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:13:39 -0500
+Processing by CheesePlatesController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 855)
+
+
+  
+NoMethodError (undefined method `arity' for :cheese:Symbol):
+  
+app/models/cheese_plate.rb:2:in `<class:CheesePlate>'
+app/models/cheese_plate.rb:1:in `<main>'
+app/controllers/cheese_plates_controller.rb:4:in `index'
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:18:26 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CheesePlatesController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/cheeseplates" for ::1 at 2019-12-13 14:20:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/cheeseplates"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:20:48 -0500
+Processing by CheesePlatesController#index as HTML
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 54)
+
+
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:20:57 -0500
+Processing by CheesePlatesController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 27)
+
+
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:21:24 -0500
+Processing by CheesePlatesController#index as HTML
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 856)
+
+
+  
+NoMethodError (undefined method `arity' for :cheese:Symbol):
+  
+app/models/cheese_plate.rb:2:in `<class:CheesePlate>'
+app/models/cheese_plate.rb:1:in `<main>'
+app/controllers/cheese_plates_controller.rb:4:in `index'
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:27:29 -0500
+Processing by CheesePlatesController#index as HTML
+  [1m[36mCheesePlate Load (3.0ms)[0m  [1m[34mSELECT "cheese_plates".* FROM "cheese_plates"[0m
+  ↳ app/controllers/cheese_plates_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 200 OK in 38ms (Views: 7.4ms | ActiveRecord: 15.9ms | Allocations: 2221)
+
+
+Started GET "/drinks" for ::1 at 2019-12-13 14:32:16 -0500
+Processing by DrinksController#index as HTML
+  [1m[36mDrink Load (3.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 15ms (Views: 5.0ms | ActiveRecord: 6.0ms | Allocations: 1518)
+
+
+Started GET "/drinks" for ::1 at 2019-12-13 14:46:20 -0500
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2820655379772048735)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePairings (20191213193343)
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.4ms)[0m  [1m[35mCREATE TABLE "pairings" ("id" bigserial primary key, "cheese_id" integer, "drink_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191213193343"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2820655379772048735)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/drinks" for ::1 at 2019-12-13 14:46:47 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DrinksController#index as HTML
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 27ms (Views: 9.9ms | ActiveRecord: 4.2ms | Allocations: 4041)
+
+
+Started GET "/cheeses" for ::1 at 2019-12-13 14:46:53 -0500
+Processing by CheesesController#index as HTML
+  [1m[36mCheese Load (2.7ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/controllers/cheeses_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+Completed 200 OK in 39ms (Views: 21.7ms | ActiveRecord: 10.1ms | Allocations: 11066)
+
+
+Started GET "/cheese_plates" for ::1 at 2019-12-13 14:47:11 -0500
+Processing by CheesePlatesController#index as HTML
+  [1m[36mCheesePlate Load (0.7ms)[0m  [1m[34mSELECT "cheese_plates".* FROM "cheese_plates"[0m
+  ↳ app/controllers/cheese_plates_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 16ms (Views: 2.3ms | ActiveRecord: 2.8ms | Allocations: 2238)
+
+
+Started GET "/pairings" for ::1 at 2019-12-13 14:47:18 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for PairingsController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/pairings" for ::1 at 2019-12-13 14:48:26 -0500
+Processing by PairingsController#index as HTML
+  [1m[36mPairing Load (1.5ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings"[0m
+  ↳ app/controllers/pairings_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 14ms (Views: 2.6ms | ActiveRecord: 3.5ms | Allocations: 2089)
+
+
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mDrink Load (6.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Create (15.9ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "variety", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "IPA"], ["variety", "beer"], ["image", "https://images.squarespace-cdn.com/content/v1/539a0d50e4b0ee0bb8d8bcb9/1459288893269-UCZFRZ4E9ZEVPQ66NG53/ke17ZwdGBToddI8pDm48kORwYSyZMuyYASxUMZ44ZhVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGOhxknOfR0mEo-Ke4LKZlda1-bFj8a4dzTqvBs91t6kCb8BodarTVrzIWCp72ioWw/image-asset.png"], ["created_at", "2019-12-13 20:13:07.698171"], ["updated_at", "2019-12-13 20:13:07.698171"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Create (0.6ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "variety", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Merlot"], ["variety", "red"], ["image", "http://cdn.shopify.com/s/files/1/0003/9433/0159/products/Riedel-001-Wine-Glass_1024x1024.jpg?v=1551373396"], ["created_at", "2019-12-13 20:13:07.722466"], ["updated_at", "2019-12-13 20:13:07.722466"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Create (2.2ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "variety", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chardonnay"], ["variety", "red"], ["image", "https://www.williams-sonoma.com/wsimgs/rk/images/dp/wcm/201938/1138/img40c.jpg"], ["created_at", "2019-12-13 20:13:07.727318"], ["updated_at", "2019-12-13 20:13:07.727318"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mDrink Load (1.0ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Destroy (4.6ms)[0m  [1m[31mDELETE FROM "drinks" WHERE "drinks"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Destroy (0.4ms)[0m  [1m[31mDELETE FROM "drinks" WHERE "drinks"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Destroy (4.0ms)[0m  [1m[31mDELETE FROM "drinks" WHERE "drinks"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Create (0.8ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "variety", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "IPA"], ["variety", "beer"], ["image", "https://images.squarespace-cdn.com/content/v1/539a0d50e4b0ee0bb8d8bcb9/1459288893269-UCZFRZ4E9ZEVPQ66NG53/ke17ZwdGBToddI8pDm48kORwYSyZMuyYASxUMZ44ZhVZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGOhxknOfR0mEo-Ke4LKZlda1-bFj8a4dzTqvBs91t6kCb8BodarTVrzIWCp72ioWw/image-asset.png"], ["created_at", "2019-12-13 20:13:55.302488"], ["updated_at", "2019-12-13 20:13:55.302488"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Create (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "variety", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Merlot"], ["variety", "red"], ["image", "http://cdn.shopify.com/s/files/1/0003/9433/0159/products/Riedel-001-Wine-Glass_1024x1024.jpg?v=1551373396"], ["created_at", "2019-12-13 20:13:55.309409"], ["updated_at", "2019-12-13 20:13:55.309409"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Create (0.5ms)[0m  [1m[32mINSERT INTO "drinks" ("name", "variety", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chardonnay"], ["variety", "red"], ["image", "https://www.williams-sonoma.com/wsimgs/rk/images/dp/wcm/201938/1138/img40c.jpg"], ["created_at", "2019-12-13 20:13:55.315352"], ["updated_at", "2019-12-13 20:13:55.315352"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlate Load (2.6ms)[0m  [1m[34mSELECT "plates".* FROM "plates" WHERE "plates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCheese Load (0.8ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCheesePlate Create (2.4ms)[0m  [1m[32mINSERT INTO "cheese_plates" ("cheese_id", "plate_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cheese_id", 1], ["plate_id", 1], ["created_at", "2019-12-13 20:13:55.400420"], ["updated_at", "2019-12-13 20:13:55.400420"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCheese Load (0.5ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/pairings" for ::1 at 2019-12-13 15:14:05 -0500
+Processing by PairingsController#index as HTML
+  [1m[36mPairing Load (2.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings"[0m
+  ↳ app/controllers/pairings_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.44ms)
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 2.2ms | Allocations: 1944)
+
+
+Started GET "/pairings" for ::1 at 2019-12-13 15:14:36 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PairingsController#index as HTML
+  [1m[36mPairing Load (0.8ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings"[0m
+  ↳ app/controllers/pairings_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 23ms (Views: 10.8ms | ActiveRecord: 4.5ms | Allocations: 3369)
+
+
+Started GET "/drinks" for ::1 at 2019-12-13 15:14:41 -0500
+Processing by DrinksController#index as HTML
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.81ms)
+Completed 200 OK in 63ms (Views: 42.3ms | ActiveRecord: 10.8ms | Allocations: 7358)
+
+
+Started GET "/cheeses" for ::1 at 2019-12-13 15:14:59 -0500
+Processing by CheesesController#index as HTML
+  [1m[36mCheese Load (2.2ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses"[0m
+  ↳ app/controllers/cheeses_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.39ms)
+Completed 200 OK in 53ms (Views: 32.8ms | ActiveRecord: 9.6ms | Allocations: 10520)
+
+
+Started GET "/cheese_plates" for ::1 at 2019-12-13 15:15:22 -0500
+Processing by CheesePlatesController#index as HTML
+  [1m[36mCheesePlate Load (1.2ms)[0m  [1m[34mSELECT "cheese_plates".* FROM "cheese_plates"[0m
+  ↳ app/controllers/cheese_plates_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+Completed 200 OK in 36ms (Views: 20.1ms | ActiveRecord: 13.2ms | Allocations: 5128)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDrink Load (2.9ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCheese Load (0.6ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPairing Create (3.0ms)[0m  [1m[32mINSERT INTO "pairings" ("cheese_id", "drink_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["cheese_id", 1], ["drink_id", 4], ["created_at", "2019-12-13 20:16:56.576251"], ["updated_at", "2019-12-13 20:16:56.576251"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/pairings" for ::1 at 2019-12-13 15:17:29 -0500
+Processing by PairingsController#index as HTML
+  [1m[36mPairing Load (0.6ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings"[0m
+  ↳ app/controllers/pairings_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 68ms (Views: 58.7ms | ActiveRecord: 7.5ms | Allocations: 5753)
+
+
+  [1m[36mCheese Load (0.7ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCheese Load (1.0ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" ORDER BY "cheeses"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCheese Load (1.1ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" ORDER BY "cheeses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCheese Load (1.1ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" ORDER BY "cheeses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" ORDER BY "drinks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPairing Load (1.4ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCheese Load (1.0ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" ORDER BY "cheeses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPairing Load (8.3ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPairing Load (1.1ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPairing Load (1.2ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" ORDER BY "pairings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/cheeses/1" for ::1 at 2019-12-13 15:29:38 -0500
+Processing by CheesesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCheese Load (3.3ms)[0m  [1m[34mSELECT "cheeses".* FROM "cheeses" WHERE "cheeses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cheeses_controller.rb:13:in `show'
+[active_model_serializers] Rendered CheeseSerializer with ActiveModelSerializers::Adapter::Attributes (1.66ms)
+Completed 200 OK in 84ms (Views: 4.1ms | ActiveRecord: 5.3ms | Allocations: 2975)
+
+
+Started GET "/cheese_plates/1" for ::1 at 2019-12-13 15:29:52 -0500
+Processing by CheesePlatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCheesePlate Load (1.9ms)[0m  [1m[34mSELECT "cheese_plates".* FROM "cheese_plates" WHERE "cheese_plates"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cheese_plates_controller.rb:13:in `show'
+[active_model_serializers] Rendered CheesePlateSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+Completed 200 OK in 12ms (Views: 2.0ms | ActiveRecord: 1.9ms | Allocations: 882)
+
+
+Started GET "/pairings/1" for ::1 at 2019-12-13 15:30:02 -0500
+Processing by PairingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPairing Load (0.6ms)[0m  [1m[34mSELECT "pairings".* FROM "pairings" WHERE "pairings"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pairings_controller.rb:12:in `show'
+[active_model_serializers] Rendered PairingSerializer with ActiveModelSerializers::Adapter::Attributes (1.11ms)
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 860)
+
+
+Started GET "/drinks/4" for ::1 at 2019-12-13 15:30:11 -0500
+Processing by DrinksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDrink Load (2.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" WHERE "drinks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:13:in `show'
+[active_model_serializers] Rendered DrinkSerializer with ActiveModelSerializers::Adapter::Attributes (9.07ms)
+Completed 200 OK in 38ms (Views: 11.3ms | ActiveRecord: 2.1ms | Allocations: 894)
+
+
+  [1m[36mDrink Load (13.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" INNER JOIN "pairings" ON "drinks"."id" = "pairings"."drink_id" WHERE "pairings"."cheese_id" = $1 LIMIT $2[0m  [["cheese_id", 1], ["LIMIT", 11]]
+  [1m[36mDrink Load (8.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks" INNER JOIN "pairings" ON "drinks"."id" = "pairings"."drink_id" WHERE "pairings"."cheese_id" = $1[0m  [["cheese_id", 1]]
+  [1m[36mPlate Load (2.0ms)[0m  [1m[34mSELECT "plates".* FROM "plates" INNER JOIN "cheese_plates" ON "plates"."id" = "cheese_plates"."plate_id" WHERE "cheese_plates"."cheese_id" = $1[0m  [["cheese_id", 1]]
