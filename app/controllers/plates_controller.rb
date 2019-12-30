@@ -5,7 +5,7 @@ class PlatesController < ApplicationController
     end
 
     def create
-        new_plate = Plate.create(plate_params)
+        new_plate = Plate.create!(plate_params)
         render json: new_plate
     end
 

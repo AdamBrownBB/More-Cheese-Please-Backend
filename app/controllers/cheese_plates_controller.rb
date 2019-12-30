@@ -5,8 +5,8 @@ class CheesePlatesController < ApplicationController
     end
 
     def create
-        new_cheese_plate = CheesePlate.create(cheese_plate_params)
-        render json: new_plate
+        new_cheese_plate = CheesePlate.create!(cheese_plate_params)
+        render json: new_cheese_plate
     end
 
      def show

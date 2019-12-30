@@ -1,3 +1,3 @@
 class PlateSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :cheeses
 end
