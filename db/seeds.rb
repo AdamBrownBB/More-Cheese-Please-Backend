@@ -28,7 +28,7 @@ Chevre = Cheese.create(name: "Chevre",
                         texture: "soft",
                         flavor: "mild",
                         milk: "goat",
-                        image: "https://www.cheese.com/media/img/cheese/Goats_cheese.jpg"
+                        image: "https://www.curdsandwhey.co.nz/wp-content/uploads/goat-chevre-cheese-starter-kit.jpg"
 )
 
 Camembert = Cheese.create(name: "Camembert", 
@@ -42,7 +42,7 @@ Roquefort = Cheese.create(name: "Roquefort",
                         texture: "soft",
                         flavor: "bleu",
                         milk: "cow",
-                        image: "https://www.cheese.com/media/img/cheese/Roquefort.jpg"
+                        image: "https://ultrafoods.ca/wp-content/uploads/2018/05/Rouquefort-Cheese.jpg"
 )
 
 Neufchatel = Cheese.create(name: "Neufchatel", 
@@ -77,7 +77,7 @@ Gouda = Cheese.create(name: "Gouda",
                         texture: "hard",
                         flavor: "mild",
                         milk: "cow",
-                        image: "http://cdn.shopify.com/s/files/1/0254/0804/5128/products/cheese_red_waxed_1200x1200.jpg?v=1573441442"
+                        image: "https://images.squarespace-cdn.com/content/v1/596f71ac4c0dbfe650b3dc34/1505924526094-LB0L19V8FGR3EELTTECH/ke17ZwdGBToddI8pDm48kFJ0QP16Ax0AXPpPdhGBL5ZZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI9fK7t5wCqg5PRovbnMFt2NevnK_EeSldwAQZmDXOqCwKMshLAGzx4R3EDFOm1kBS/yellowwax.jpg?format=1000w"
 )
 
 Parmesan = Cheese.create(name: "Parmesan", 
