@@ -9,7 +9,7 @@ services:
     name: more_cheese
     env: ruby
     plan: free
-    buildCommand: npm install && npm build
+    buildCommand: bundle install 
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
