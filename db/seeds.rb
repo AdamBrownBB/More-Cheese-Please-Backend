@@ -91,7 +91,7 @@ Parmesan = Cheese.create(name: "Parmesan",
 puts "made new cheez"
 
 
-puts "killed the dranks"
+puts "kill the dranks"
 Drink.destroy_all
 puts "killed all of the dranks"
 
