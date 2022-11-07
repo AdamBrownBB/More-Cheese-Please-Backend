@@ -1,0 +1,20 @@
+databases:
+  - name: more_cheese
+    databaseName: more_cheese
+    user: more_cheese
+    plan: free
+
+services:
+  - type: web
+    name: more_cheese
+    env: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: more_cheese
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
