@@ -1,4 +1,4 @@
-class CheesePlatesController < ApplicationController
+!class CheesePlatesController < ApplicationController
 
     def index     
         render json: CheesePlate.all 

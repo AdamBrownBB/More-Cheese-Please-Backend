@@ -63,14 +63,14 @@ Feta = Cheese.create(name: "Feta",
                         texture: "hard",
                         flavor: "bold",
                         milk: "sheep",
-                        image: "https://www.cheese.com/media/img/cheese/Feta.jpg"
+                        image: "https://cdn11.bigcommerce.com/s-7c08qbh/images/stencil/600x600/products/3082/10012/feta_mevgal-1__22440.1665492616.jpg"
 )
 
 Gorgonzola = Cheese.create(name: "Gorgonzola", 
                         texture: "semi-soft",
                         flavor: "bleu",
                         milk: "cow",
-                        image: "https://www.cheese.com/media/img/cheese/Gorgonzola.jpg"
+                        image: "https://cdn.shopify.com/s/files/1/0362/0401/9852/products/gorgonzola-18-wheel-33lbs-meats-cheeses-sognotoscano-509428.jpg"
 )
 
 Gouda = Cheese.create(name: "Gouda", 
